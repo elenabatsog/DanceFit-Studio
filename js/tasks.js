@@ -7,6 +7,7 @@ const taskDescription = document.querySelector("#taskDescription");
 const taskDate = document.querySelector("#taskDate");
 const taskPriority = document.querySelector("#taskPriority");
 const taskStatus = document.querySelector("#taskStatus");
+const filterStatus = document.querySelector("#filterStatus");
 const taskTableBody = document.querySelector("#taskTableBody");
 
 const totalTasks = document.querySelector("#totalTasks");
@@ -30,6 +31,20 @@ taskForm.addEventListener("submit", function(event) {
     showTasks();
     updateSummary();
 });
+
+//filtering tasks 
+filterStatus.addEventListener("change", function() {
+    const selectedStatus = filterStatus.value;
+    if (selectedStatus === "All") {
+        showTasks();
+    } else {
+        const filteredTasks = tasks.filter(function (task) {
+            return task.status === selectedStatus;
+        });
+
+        showFilteredTasks(filteredTasks);
+    }
+})
 
 //Show tasks in the table below
 function showTasks() {
@@ -59,7 +74,7 @@ function showTasks() {
         completeButton.classList.add("btn", "btn-success", "btn-sm", "me-1");
 
         completeButton.addEventListener("click", function () {
-            completeTasks(index);
+            completeTask(index);
         });
 
         const editButton = document.createElement("button");
@@ -93,6 +108,39 @@ function showTasks() {
 
     });
 }
+
+//This shows only the filtered tasks in the table
+function showFilteredTasks(filteredTasks) {
+    taskTableBody.textContent = "";
+
+    filteredTasks.forEach(function (task) {
+        const row = document.createElement("tr");
+
+        const nameCell = document.createElement("td");
+        nameCell.textContent = task.name;
+
+        const descriptionCell = document.createElement("td");
+        descriptionCell.textContent = task.description;
+
+        const dateCell = document.createElement("td");
+        dateCell.textContent = task.date;
+
+        const priorityCell = document.createElement("td");
+        priorityCell.textContent = task.priority;
+
+        const statusCell = document.createElement("td");
+        statusCell.textContent = task.status;
+
+        row.appendChild(nameCell);
+        row.appendChild(descriptionCell);
+        row.appendChild(dateCell);
+        row.appendChild(priorityCell);
+        row.appendChild(statusCell);
+
+        taskTableBody.appendChild(row);
+    });
+}
+
 
 //update summary cards
 function updateSummary() {
