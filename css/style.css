@@ -1,3 +1,4 @@
+/* Home Page */
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
@@ -129,4 +130,31 @@ body {
         margin-left: 0;
         margin-top: 10px;
     }
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .section-padding {
+    background-color: #121212;
+}
+
+.dark-mode .service-card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .section-title {
+    color: white;
+}
+
+.dark-mode .section-subtitle {
+    color: #cccccc;
+}
+
+.dark-mode .quote-section {
+    background-color: #1e1e1e;
 }
