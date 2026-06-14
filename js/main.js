@@ -27,3 +27,16 @@ async function loadQuote() {
 
 //When the page loads, the function/quote will run
 loadQuote();
+
+//Dark Mode button functionality
+const darkModeButton = document.querySelector("#darkmodeBtn");
+
+darkModeButton.addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+        darkModeButton.textContent = "Light Mode";
+
+    } else {
+        darkModeButton.textContent = "Dark Mode";
+    }
+});
