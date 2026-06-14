@@ -7,7 +7,7 @@ const taskDescription = document.querySelector("#taskDescription");
 const taskDate = document.querySelector("#taskDate");
 const taskPriority = document.querySelector("#taskPriority");
 const taskStatus = document.querySelector("#taskStatus");
-const TaskTableBody = document.querySelector("#TaskTableBody");
+const taskTableBody = document.querySelector("#taskTableBody");
 
 const totalTasks = document.querySelector("#totalTasks");
 const pendingTasks = document.querySelector("#pendingTasks");
@@ -33,7 +33,7 @@ taskForm.addEventListener("submit", function(event) {
 
 //Show tasks in the table below
 function showTasks() {
-    TaskTableBody.textContent = "";
+    taskTableBody.textContent = "";
 
     tasks.forEach(function (task, index) {
         const row = document.createElement("tr");
@@ -59,7 +59,7 @@ function showTasks() {
         completeButton.classList.add("btn", "btn-success", "btn-sm", "me-1");
 
         completeButton.addEventListener("click", function () {
-            completedTasks(index);
+            completeTasks(index);
         });
 
         const editButton = document.createElement("button");
@@ -89,7 +89,7 @@ function showTasks() {
         row.appendChild(statusCell);
         row.appendChild(actionsCell);
 
-        TaskTableBody.appendChild(row);   
+        taskTableBody.appendChild(row);   
 
     });
 }
