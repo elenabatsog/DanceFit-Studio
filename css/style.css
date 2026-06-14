@@ -190,3 +190,22 @@ body {
 .dark-mode .latest-section {
     background-color: #010714;
 }
+
+/* Tasks Page */
+.page-header {
+    background-color: #020b1c;
+    color: white;
+    padding: 60px 0;
+}
+
+.summary-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h3 {
+    color: #0d47a1;
+    font-weight: 700;
+}
