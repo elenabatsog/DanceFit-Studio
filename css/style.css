@@ -1,3 +1,6 @@
+html, body {
+    overflow-x: hidden;
+}
 /* Home Page */
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -46,7 +49,7 @@ body {
 }
 
 .hero-title {
-    font-size: 64px;
+    font-size: clamp(2.2rem, 6vw, 4rem);
     font-weight: 800;
     line-height: 1.1;
 }
@@ -118,12 +121,41 @@ body {
 }
 
 @media (max-width: 768px) {
+
     .hero-title {
-        font-size: 44px;
+        font-size: 2rem;
+    }
+
+    .hero-section .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     .hero-overlay {
         padding: 50px 0;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .btn-lg {
+        font-size: 12px;
+        padding: 10px 16px;
+        margin-bottom: 10px;
+    }
+
+    .service-card {
+        margin-bottom: 18px;
+    }
+
+    .quote-box {
+        font-size:15px;
+    }
+
+    .footer-logo {
+        height: 50px;
     }
 
     .nav-link {
@@ -155,6 +187,6 @@ body {
     color: #cccccc;
 }
 
-.dark-mode .quote-section {
-    background-color: #1e1e1e;
+.dark-mode .latest-section {
+    background-color: #010714;
 }
