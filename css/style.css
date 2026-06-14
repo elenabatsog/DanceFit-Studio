@@ -164,7 +164,7 @@ body {
     }
 }
 
-/* Dark Mode */
+/* Dark Mode in the homepage*/
 .dark-mode {
     background-color: #121212;
     color: white;
@@ -208,4 +208,49 @@ body {
 .summary-card h3 {
     color: #0d47a1;
     font-weight: 700;
+}
+
+/*Dark mode for the tasks page */
+.dark-mode .task-form-section,
+.dark-mode .summary-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+.dark-mode .form-control::placeholder {
+    color: #cccccc;
+}
+
+.dark-mode .table {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode td {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .summary-card h3 {
+    color: #8ab4ff;
+}
+
+/*Task Analytics part of the project*/
+.analytics-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius:12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    max-width: 600px;
+}
+
+.dark-mode .analytics-card {
+    background-color: #1e1e1e;
 }
