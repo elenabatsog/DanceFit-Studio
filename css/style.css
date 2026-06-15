@@ -254,3 +254,28 @@ body {
 .dark-mode .analytics-card {
     background-color: #1e1e1e;
 }
+
+/*About Page*/
+.team-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    height:100%;
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.dark-mode .team-card {
+    background-color: #1e1e1e;
+    color:#ffffff;
+}
+
+.dark-mode .bg-light {
+    background-color: #121212;
+}
