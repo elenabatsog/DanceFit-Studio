@@ -338,3 +338,15 @@ body {
     background-color: #1e1e1e;
     color: #ffffff;
 }
+
+.dark-mode .section-title {
+    color: white;
+}
+
+.dark-mode .section-subtitle {
+    color: #cccccc;
+}
+
+.dark-mode h4 {
+    color: white;
+}
