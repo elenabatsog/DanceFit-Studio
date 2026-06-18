@@ -8,8 +8,8 @@ const taskDate = document.querySelector("#taskDate");
 const taskPriority = document.querySelector("#taskPriority");
 const taskStatus = document.querySelector("#taskStatus");
 const filterStatus = document.querySelector("#filterStatus");
+const sortTasks = document.querySelector("#sortTasks");
 const taskTableBody = document.querySelector("#taskTableBody");
-
 const totalTasks = document.querySelector("#totalTasks");
 const pendingTasks = document.querySelector("#pendingTasks");
 const completedTasks = document.querySelector("#completedTasks");
@@ -30,6 +30,7 @@ taskForm.addEventListener("submit", function(event) {
     taskForm.reset();
     showTasks();
     updateSummary();
+    updateChart();
 });
 
 //filtering tasks 
@@ -43,6 +44,18 @@ filterStatus.addEventListener("change", function() {
         });
 
         showFilteredTasks(filteredTasks);
+    }
+})
+
+sortTasks.addEventListener("change", function() {
+    if (sortTasks.value === "Name") {
+        tasks.sort(function (a,b) {
+            return a.name.localeCompare(b.name);
+        });
+    } else if (sortTasks.value === "Date") {
+        tasks.sort(function(a,b) {
+            return new Date(a.date) - new Date(b.date);
+        });
     }
 })
 
@@ -147,7 +160,7 @@ function updateSummary() {
     totalTasks.textContent = tasks.length;
 
     let pendingCount = 0;
-    let completeCount = 0;
+    let completedCount = 0;
 
     tasks.forEach(function (task) {
         if (task.status === "Pending") {
@@ -155,7 +168,7 @@ function updateSummary() {
         }
 
         if (task.status === "Completed") {
-            completeCount++;
+            completedCount++;
         }
     });
 
@@ -169,6 +182,7 @@ function completeTask(index) {
 
     showTasks();
     updateSummary();
+    updateChart();
 }
 
 //delete a task if needed
@@ -177,6 +191,7 @@ function deleteTask(index) {
 
     showTasks();
     updateSummary();
+    updateChart();
 }
 
 //edit a task if needed
@@ -190,4 +205,42 @@ function editTask(index) {
     tasks.splice(index, 1);
     showTasks();
     updateSummary();
+    updateChart();
+}
+
+//Task Analytics part of the project. creation of chart
+let taskChart;
+function updateChart() {
+    const chartElement = document.querySelector("#taskChart");
+    if (!chartElement) {
+        return;
+    }
+
+    let pendingCount = 0;
+    let completedCount = 0;
+
+    tasks.forEach(function (task) {
+        if (task.status === "Pending") {
+            pendingCount++;
+        }
+
+        if (task.status === "Completed") {
+            completedCount++;
+        }
+    });
+
+    if (taskChart) {
+        taskChart.destroy();
+    }
+
+    taskChart = new Chart(chartElement, {
+        type: "bar",
+        data: {
+            labels: ["Pending", "Completed"],
+            datasets: [{
+                label: "Number of Tasks",
+                data: [pendingCount, completedCount]
+            }]
+        }
+    });
 }
