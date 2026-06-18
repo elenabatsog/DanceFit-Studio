@@ -328,10 +328,22 @@ body {
     height: 100%;
 }
 
+.event-card p {
+    color: #111111;
+}
+
 .event-img {
     width: 100%;
     height: 230px;
     object-fit: cover;
+}
+
+.dark-mode main {
+    background-color: #121212;
+}
+
+.dark.mode h4, .dark-mode main h4 {
+    color: #ffffff;
 }
 
 .dark-mode .event-card {
