@@ -26,17 +26,21 @@ async function loadQuote() {
 }
 
 //When the page loads, the function/quote will run
-loadQuote();
+if (document.querySelector("#quoteText") && document.querySelector("#quoteAuthor")) {
+    loadQuote();
+}
 
 //Dark Mode button functionality
-const darkModeButton = document.querySelector("#darkmodeBtn");
+const darkModeButton = document.querySelector("#darkModeBtn");
+if (darkModeButton) {
+    darkModeButton.addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+            darkModeButton.textContent = "Light Mode";
 
-darkModeButton.addEventListener("click", function() {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-        darkModeButton.textContent = "Light Mode";
+        } else {
+            darkModeButton.textContent = "Dark Mode";
+        }
+    });
+}
 
-    } else {
-        darkModeButton.textContent = "Dark Mode";
-    }
-});
