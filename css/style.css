@@ -271,6 +271,22 @@ body {
     margin-bottom: 20px;
 }
 
+.dark-mode section {
+    background-color: #121212;
+}
+
+.dark-mode .section-padding {
+    background-color: #121212;
+}
+
+.dark-mode .section-title {
+    background-color: #ffffff; 
+}
+
+.dark-mode .section-subtitle {
+    background-color: #cccccc;
+}
+
 .dark-mode .team-card {
     background-color: #1e1e1e;
     color:#ffffff;
@@ -278,4 +294,27 @@ body {
 
 .dark-mode .bg-light {
     background-color: #121212;
+    color: white;
+}
+
+.dark-mode .service-card {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Contact Page */
+.contact-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info {
+    margin-top: 25px;
+}
+
+.dark-mode .contact-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
