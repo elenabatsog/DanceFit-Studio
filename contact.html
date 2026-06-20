@@ -11,6 +11,55 @@
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="DanceFit Studio logo" class="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MainNavBar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="MainNavBar">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="tasks.html">Tasks</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary btn-sm" href="tasks.html">Manage Tasks</a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-light btn-sm" id="darkModeBtn">
+                            Dark Mode
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <header class="page-header text-center">
         <div class="container">
             <h1>Contact Us</h1>
@@ -35,7 +84,7 @@
 
                 <div class="col-lg-7">
                     <div class="contact-card">
-                        <h2 class="section-title mb-4">Send us A Message</h2>>
+                        <h2 class="section-title mb-4">Send us A Message</h2>
 
                         <form id="contactForm">
                             <div class="mb-3">
@@ -47,7 +96,7 @@
 
                             <div class="mb-3">
 
-                                <label for="contactEmail" class="form-label">Subject</label>
+                                <label for="contactSubject" class="form-label">Subject</label>
                                 <input type="text" class="form-control" id="contactSubject" placeholder="Message">
 
                             </div>
