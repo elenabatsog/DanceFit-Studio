@@ -1,20 +1,29 @@
 const contactForm = document.querySelector("#contactForm");
-const contactForm = document.querySelector("#contactEmail");
-const contactForm = document.querySelector("#contactSubject");
-const contactForm = document.querySelector("#contactMessage");
 const contactResult = document.querySelector("#contactResult");
 
+//Contact form validation
 contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const contactName = document.querySelector("#contactName").value;
-    if (contactName.length < 2) {
-        contactResult.textContent = "Please enter a valid name.";
+    const name = document.querySelector("#contactName").value;
+    const email = document.querySelector("#contactEmail").value;
+    const subject = document.querySelector("#contactSubject").value;
+    const message = document.querySelector("#contactMessage").value;
+
+    if (name === "" || email === "" || subject === "" || message === "") {
+        contactResult.textContent = "Please fill in all fields.";
         return;
     }
 
-    contactResult.textContent = "Your message has been submitted successfully.";
-    contactForm.requestFullscreen();
-});
+    if (!email.includes("@") || !email.includes(.)) {
+        contactResult.textContent = "Please enter a valid email address.";
+    }
 
-//Contact form validation
+    if (!isNaN(name)) {
+        contactResult.textContent = "Name should not contain numbers.";
+    }
+
+
+    contactResult.textContent = "Your message has been submitted successfully.";
+    contactForm.reset();
+});
