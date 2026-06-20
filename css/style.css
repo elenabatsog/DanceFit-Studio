@@ -120,6 +120,13 @@ body {
     height: 70px;
 }
 
+.social-links a {
+    color: #4dabff;
+    text-decoration: underline;
+    margin: 0 10px;
+}
+
+
 @media (max-width: 768px) {
 
     .hero-title {
