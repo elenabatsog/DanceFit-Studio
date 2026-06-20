@@ -326,6 +326,17 @@ body {
     color: #ffffff;
 }
 
+/*Google Maps Integration*/
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.map-container iframe {
+    border: 0;
+}
+
 /*Events page*/
 .event-card {
     background-color: #ffffff;
