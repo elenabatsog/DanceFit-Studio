@@ -13,17 +13,21 @@
 
 <body>
 
+    <!--The navigation bar with links to exact pages-->
     <nav class="navbar navbar-expand-lg navbar-dark custom-navbar sticky-top">
         <div class="container">
 
+            <!--The logo of the website-->
             <a class="navbar-brand" href="index.html">
                 <img src="images/logo.png" alt="DanceFit Studio logo" class="logo">
             </a>
 
+            <!--The button for the mobile version menu-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MainNavBar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!--The navigation links to pages-->
             <div class="collapse navbar-collapse" id="MainNavBar">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
 
@@ -47,10 +51,12 @@
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
 
+                    <!--A button that leads users to tasks page-->
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-primary btn-sm" href="tasks.html">Manage Tasks</a>
                     </li>
 
+                    <!--A button for dark mode-->
                     <li class="nav-item ms-lg-3">
                         <button class="btn btn-outline-light btn-sm" id="darkModeBtn">
                             Dark Mode
@@ -61,6 +67,7 @@
         </div>
     </nav>
 
+    <!--A title for this page-->
     <header class="page-header text-center">
         <div class="container">
             <h1>Task Manager</h1>
@@ -68,18 +75,10 @@
         </div>
     </header>
 
-    <!--Task Anlytics part of the project-->
-    <section class="mt-5">
-        <h2 class="section-title mb-4">Task Analytics</h2>
-
-        <div class="analytics-card">
-            <canvas id="taskChart"></canvas>
-        </div>
-    </section>
-
     <main class="section-padding">
         <div class="container">
 
+            <!--Created a new task form including name, due date, priority, status, description-->
             <section class="task-form-section mb-5">
                 <h2 class="section-title mb-4">Add New Task</h2>
 
@@ -114,10 +113,11 @@
 
 
                     <div class="col-12">
-                        <label for="taskDescription" class="form-label">Decription</label>
+                        <label for="taskDescription" class="form-label">Description</label>
                         <textarea class="form-control" id="taskDescription" rows="3" placeholder="Write task details here"></textarea>
                     </div>
 
+                    <!--A button for the user to submit the completed form-->
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">
                             Add Task 
@@ -126,31 +126,36 @@
                 </form>
             </section>
 
-            <!-- Task summary-->
+            <!-- Task summary cards for an overview-->
              <section class="mb-5">
-                <div class="col-md-4">
-                    <div class="summary-card">
-                        <h3 id="totalTasks">0</h3>
-                        <p>Total Tasks</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="summary-card">
+                            <h3 id="totalTasks">0</h3>
+                            <p>Total Tasks</p>
+                        </div>
                     </div>
+                
+                
+
+                    <div class="col-md-4">
+                        <div class="summary-card">
+                            <h3 id="pendingTasks">0</h3>
+                            <p>Pending Tasks</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="summary-card">
+                            <h3 id="completedTasks">0</h3>
+                            <p>Completed Tasks</p>
+                        </div>
+                    </div> 
                 </div>
+            </section>
 
-                <div class="col-md-4">
-                    <div class="summary-card">
-                        <h3 id="pendingTasks">0</h3>
-                        <p>Pending Tasks</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="summary-card">
-                        <h3 id="completedTasks">0</h3>
-                        <p>Completed Tasks</p>
-                    </div>
-                </div> 
-             </section>
-
-             <section class="mb-4">
+            <!--Filtering tasks based on status-->
+            <section class="mb-4">
                 <div class="row g-3">
 
                     <div class="col-md-6">
@@ -162,6 +167,7 @@
                         </select>
                     </div>
 
+                    <!--Sorting tasks section-->
                     <div class="col-md-6">
                         <label for="sortTasks" class="form-label">Sort Tasks</label>
                         <select class="form-select" id="sortTasks">
@@ -171,10 +177,20 @@
                         </select>
                     </div>
                 </div>
-             </section>
+            </section>
 
-             <section>
+              <!--Task Dashboard Analytics-->
+            <section class="mt-5">
+                <h2 class="section-title mb-4">Task Analytics</h2>
 
+                <div class="analytics-card">
+                    <canvas id="taskChart"></canvas>
+                </div>
+            </section>
+
+            <section>
+
+                <!--Tasks Table at the end of the page for better organization-->
                 <h2 class="section-title mb-4">All Tasks</h2>
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover align-middle">
@@ -189,6 +205,7 @@
                             </tr>
                         </thead>
 
+                        <!--Rows are being created using Javascript-->
                         <tbody id="taskTableBody">
                         </tbody>
                     </table>
@@ -206,6 +223,16 @@
             <p class="mt-3">
                 A place where you can be yourself! Be passionate!
             </p>
+
+            <!--Contact Information-->
+            <p>Email: info@dancefitstudio.com</p>
+
+            <!--Social Media Links-->
+            <div class="social-links">
+                <a href="htpps://instagram.com" target="_blank">Instagram</a>
+                <a href="htpps://facebook.com" target="_blank">Facebook</a>
+                <a href="htpps://youtube.com" target="_blank">Youtube</a>
+            </div>
 
             <p class="mb-0">
                 © 2026 DanceFit Studio. All rights reserved.
