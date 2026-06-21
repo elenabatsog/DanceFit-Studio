@@ -47,7 +47,7 @@ filterStatus.addEventListener("change", function() {
             return task.status === selectedStatus;
         });
 
-        showFilteredTasks(filteredTasks);
+        showTasks(filteredTasks);
     }
 })
 
@@ -69,11 +69,12 @@ sortTasks.addEventListener("change", function() {
 })
 
 //Show tasks in the table below
-function showTasks() {
+function showTasks(taskList = tasks) {
     taskTableBody.textContent = "";
 
     //For each task, it creates a new row
-    tasks.forEach(function (task, index) {
+    tasks.forEach(function (task) {
+        const index = tasks.indexOf(task);
         const row = document.createElement("tr");
         const nameCell = document.createElement("td");
         nameCell.textContent = task.name;
